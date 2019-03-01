@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{memo} from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import { BrowserRouter , Route, Link,Switch, } from 'react-router-dom'
 import Card from '@material-ui/core/Card'
@@ -31,4 +31,4 @@ const Launch = (props) => {
         
     )
 }
-export default Launch;
+export default memo(Launch)
