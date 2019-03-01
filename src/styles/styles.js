@@ -1,3 +1,5 @@
+import { red } from "@material-ui/core/colors";
+
 const styles = theme => ({
    
     paper: {
@@ -5,15 +7,13 @@ const styles = theme => ({
       paddingTop: theme.spacing.unit * 2,
       paddingBottom: theme.spacing.unit * 2,
     },
-   grid:{
-
-        flexGrow: 1,
-        marginTop:'5rem',
-        marginLeft:"auto",
-        marginRight:'auto',
-        width:'90vw',
+    cardImage:{
+        height: 'auto',
+        maxHeight: '250px',
+        width: 'auto',
+        maxWidth: '250px',
       
-   }
+    }
   });
 
 

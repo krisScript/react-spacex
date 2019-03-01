@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -7,6 +8,7 @@
   height: 40vmin;
   pointer-events: none;
 }
+
 
 .App-header {
   background-color: #282c34;

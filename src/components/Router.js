@@ -2,7 +2,7 @@ import React,{Fragment} from 'react'
 import { BrowserRouter , Route, Link,Switch, } from 'react-router-dom'
 import Navbar from './Navbar'
 import Missions from './Missions'
-import Launches from './Launches'
+import Launches from './Launches/Launches'
 import Home from './Home'
 const Router = () => (
     <BrowserRouter>
