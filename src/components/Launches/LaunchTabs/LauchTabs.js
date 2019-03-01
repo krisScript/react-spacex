@@ -19,7 +19,7 @@ const styles = theme => ({
   },
 });
 
-class TabsWrappedLabel extends Component {
+class TabsWrappedLabel extends Component  {
   state = {
     value: 'all',
     launches:null,
@@ -70,7 +70,6 @@ class TabsWrappedLabel extends Component {
   }
   return (
     <div>
-      
       {content}
     </div>
   );

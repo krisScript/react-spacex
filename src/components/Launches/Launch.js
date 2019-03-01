@@ -1,5 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles';
+import { BrowserRouter , Route, Link,Switch, } from 'react-router-dom'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
@@ -22,7 +23,7 @@ const Launch = (props) => {
                         
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="primary"  target="_blank">
+                        <Button size="small" color="primary" to={`/launch/${launch.flight_number}`} component={Link}>
                             Learn More
                         </Button> 
                     </CardActions>
