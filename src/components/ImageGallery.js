@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { GridList, GridTile } from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import ZoomIn from 'material-ui/svg-icons/action/zoom-in';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import Dialog from '@material-ui/core/Dialog';
+import Button from '@material-ui/core/Button';
 
-class ImageResults extends Component {
+class ImageGallery extends Component {
   state = {
     open: false,
     currentImg: ''
@@ -17,7 +16,9 @@ class ImageResults extends Component {
   };
 
   handleClose = () => {
-    this.setState({ open: false });
+    this.setState(prevState => ({
+      open:!prevState.open
+    }))
   };
 
   render() {
@@ -26,24 +27,21 @@ class ImageResults extends Component {
 
     if (images) {
       imageListContent = (
-        <GridList cols={3}>
+        <GridList cols={3} style={{width:"100%"}}>
           {images.map(img => (
-            <GridTile
-              title={img.tags}
-              key={img.id}
+            <GridListTile
+              title={img}
+              key={img}
               subtitle={
                 <span>
-                  by <strong>{img.user}</strong>
+                  by <strong>{img}</strong>
                 </span>
               }
-              actionIcon={
-                <IconButton onClick={() => this.handleOpen(img.largeImageURL)}>
-                  <ZoomIn color="white" />
-                </IconButton>
-              }
+
             >
-              <img src={img.largeImageURL} alt="" />
-            </GridTile>
+              <img src={img} alt="" onClick={() => this.handleOpen(img)} />
+              
+            </GridListTile>
           ))}
         </GridList>
       );
@@ -52,7 +50,7 @@ class ImageResults extends Component {
     }
 
     const actions = [
-      <FlatButton label="Close" primary={true} onClick={this.handleClose} />
+      <Button label="Close" primary={true} onClick={this.handleClose} />
     ];
 
     return (
@@ -60,19 +58,18 @@ class ImageResults extends Component {
         {imageListContent}
         <Dialog
           actions={actions}
-          modal={false}
           open={this.state.open}
-          onRequestClose={this.handleClose}
+          onBackdropClick={this.handleClose}
         >
-          <img src={this.state.currentImg} alt="" style={{ width: '100%' }} />
+          <img src={this.state.currentImg} alt="Launch IMage" style={{ width: '100%' }} />
         </Dialog>
       </div>
     );
   }
 }
 
-ImageResults.propTypes = {
+ImageGallery.propTypes = {
   images: PropTypes.array.isRequired
 };
 
-export default ImageResults;
+export default ImageGallery;
