@@ -167,6 +167,14 @@ class PrimarySearchAppBar extends React.Component {
            <Button>Launches</Button>
         </MenuItem>
 
+        <MenuItem
+          onClick={this.handleMobileMenuClose}
+          component={Link}
+          to="/history"
+          selected={'/history' === pathname}
+        >
+           <Button>History</Button>
+        </MenuItem>
 
         <MenuItem
           onClick={this.handleMobileMenuClose}
@@ -217,6 +225,9 @@ class PrimarySearchAppBar extends React.Component {
           <Button component={Link}
           to="/rockets"
           color="inherit">Rockets</Button>
+          <Button component={Link}
+          to="/history"
+          color="inherit">History</Button>
             <Button component={Link}
           to="/"
           color="inherit">Home</Button>

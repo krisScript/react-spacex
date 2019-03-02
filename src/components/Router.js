@@ -8,6 +8,7 @@ const LaunchDetails = lazy(() => import('./Launches/LaunchDetails'));
 const RocketDetails = lazy(() => import('./Rockets/RocketDetails'));
 const Launches = lazy(() => import('./Launches/Launches'));
 const Missions = lazy(() => import('./Missions'));
+const HistoryList =lazy(() => import('./History/HistoryList'));
 const Rockets =lazy(() => import('./Rockets/Rockets'));
 const Router = () => (
   <BrowserRouter>
@@ -37,6 +38,15 @@ const Router = () => (
           render={() => (
             <Suspense fallback={<Loader/>}>
               <Launches />
+            </Suspense>
+          )}
+        />
+        <Route
+          path="/history"
+          
+          render={() => (
+            <Suspense fallback={<Loader/>}>
+              <HistoryList />
             </Suspense>
           )}
         />
