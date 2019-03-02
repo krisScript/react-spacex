@@ -10,8 +10,8 @@ const Home = () => (
             <Grid item xs={12} sm={6} lg={4} xl={4}  >
             <Card style={{margin:'5rem'}}>
             <CardContent style={{textAlign:'center'}}>
-            <Typography component="h1" variant="h4" gutterTop>SpaceX</Typography>
-            <Typography variant="p" variant="h6" gutterTop style={{padding:'1rem'}}>
+            <Typography component="h1" variant="h4" >SpaceX</Typography>
+            <Typography variant="p" variant="h6"  style={{padding:'1rem'}}>
             SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets
       </Typography>
         </CardContent>
