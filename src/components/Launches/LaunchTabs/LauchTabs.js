@@ -35,7 +35,6 @@ class LaunchTabs extends Component {
         <Consumer>
           {contextValue => {
             let content;
-
             if (contextValue.data) {
               const { launches } = contextValue.data;
               const pastLaunches = launches.filter(
@@ -46,7 +45,6 @@ class LaunchTabs extends Component {
               );
               content = (
                 <>
-                  {' '}
                   <AppBar position="static">
                     <Tabs value={value} onChange={this.handleChange} centered>
                       <Tab value="past" label="Past" />

@@ -12,12 +12,15 @@ class ImageGallery extends Component {
   };
 
   handleOpen = img => {
-    this.setState({ open: true, currentImg: img });
+    this.setState(prevState => ({
+      open: true,
+      currentImg: img
+    }));
   };
 
   handleClose = () => {
     this.setState(prevState => ({
-      open: !prevState.open
+      open: false
     }));
   };
 
@@ -29,15 +32,7 @@ class ImageGallery extends Component {
       imageListContent = (
         <GridList cols={3} style={{ width: '100%' }}>
           {images.map(img => (
-            <GridListTile
-              title={img}
-              key={img}
-              subtitle={
-                <span>
-                  by <strong>{img}</strong>
-                </span>
-              }
-            >
+            <GridListTile key={img}>
               <img src={img} alt="" onClick={() => this.handleOpen(img)} />
             </GridListTile>
           ))}

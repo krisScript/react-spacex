@@ -4,16 +4,16 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import styles from '../../styles/styles';
 import PropTypes from 'prop-types';
-import LaunchTabs from './LaunchTabs/LauchTabs'
+import LaunchTabs from './LaunchTabs/LauchTabs';
 const Launches = props => {
   const { classes } = props;
- 
+
   return (
     <div>
       <Paper className={classes.paper} elevation={3}>
-                <Typography variant="h5">Launches</Typography>
-              </Paper>
-              <LaunchTabs />
+        <Typography variant="h5">Launches</Typography>
+      </Paper>
+      <LaunchTabs />
     </div>
   );
 };
