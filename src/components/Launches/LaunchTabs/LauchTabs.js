@@ -16,7 +16,7 @@ const styles = theme => ({
   }
 });
 
-class TabsWrappedLabel extends Component {
+class LaunchTabs extends Component {
   state = {
     value: 'all',
     launches: null,
@@ -71,5 +71,7 @@ class TabsWrappedLabel extends Component {
     );
   }
 }
-
-export default withStyles(styles)(TabsWrappedLabel);
+LaunchTabs.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+export default withStyles(styles)(LaunchTabs);

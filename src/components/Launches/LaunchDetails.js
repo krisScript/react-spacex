@@ -1,4 +1,5 @@
-import React, { Fragment, Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -111,11 +112,11 @@ const LaunchDetails = props => {
                     </CardContent>
                   </Card>
                 </Grid>
-                {launch.links.flickr_images.length > 0 ? 
+                {launch.links.flickr_images.length > 0 ? (
                   <Grid item xs={12} sm={6} lg={12} xl={12}>
                     <ImageGallery images={launch.links.flickr_images} />
                   </Grid>
-                 : (
+                ) : (
                   <></>
                 )}
               </Grid>
@@ -129,6 +130,14 @@ const LaunchDetails = props => {
       }}
     </Consumer>
   );
+};
+
+LaunchDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      flightNumber: PropTypes.string.isRequired
+    })
+  })
 };
 
 export default LaunchDetails;

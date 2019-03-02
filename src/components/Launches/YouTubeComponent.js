@@ -1,4 +1,5 @@
-import React,{Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 const YouTubeComponent = (props) => {
     return (
       <div
@@ -24,29 +25,9 @@ const YouTubeComponent = (props) => {
       </div>
     );
   };
-// class YouTubeComponent extends Component {
-//     _onReady = (event) => {
 
-//         event.target.pauseVideo();
-//       }
-//   render() {
-//     const opts = {
-//       height: '200',
-//       width: '350',
-//       playerVars: { // https://developers.google.com/youtube/player_parameters
-//         autoplay: 1
-//       }
-//     };
-
-//     return (
-//       <YouTube
-//         videoId={this.props.videoId}
-//         opts={opts}
-//         onReady={this._onReady}
-//       />
-//     );
-//   }
-
- 
-// }
+  
+YouTubeComponent.propTypes = {
+  youtubeId: PropTypes.string.isRequired
+};
 export default YouTubeComponent

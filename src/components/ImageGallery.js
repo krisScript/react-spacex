@@ -17,8 +17,8 @@ class ImageGallery extends Component {
 
   handleClose = () => {
     this.setState(prevState => ({
-      open:!prevState.open
-    }))
+      open: !prevState.open
+    }));
   };
 
   render() {
@@ -27,7 +27,7 @@ class ImageGallery extends Component {
 
     if (images) {
       imageListContent = (
-        <GridList cols={3} style={{width:"100%"}}>
+        <GridList cols={3} style={{ width: '100%' }}>
           {images.map(img => (
             <GridListTile
               title={img}
@@ -37,10 +37,8 @@ class ImageGallery extends Component {
                   by <strong>{img}</strong>
                 </span>
               }
-
             >
               <img src={img} alt="" onClick={() => this.handleOpen(img)} />
-              
             </GridListTile>
           ))}
         </GridList>
@@ -61,7 +59,11 @@ class ImageGallery extends Component {
           open={this.state.open}
           onBackdropClick={this.handleClose}
         >
-          <img src={this.state.currentImg} alt="Launch IMage" style={{ width: '100%' }} />
+          <img
+            src={this.state.currentImg}
+            alt="Launch IMage"
+            style={{ width: '100%' }}
+          />
         </Dialog>
       </div>
     );
