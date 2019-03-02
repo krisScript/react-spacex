@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import LandingPageImage from '../assets/landing-page-img.jpg'
 const Home = () => (
     <div>
-            <Grid container    justify="center" style={{height:'100vh',width:"100vw",background:`url(${LandingPageImage})`}} >
+            <Grid container    justify="center" style={{height:'93.4vh',width:"100vw",background:`url(${LandingPageImage})`}} >
             <Grid item xs={12} sm={6} lg={4} xl={4}  >
             <Card style={{margin:'5rem'}}>
             <CardContent style={{textAlign:'center'}}>

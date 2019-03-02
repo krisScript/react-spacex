@@ -1,11 +1,11 @@
 const getData = async () => {
     try{ 
-        let [missions,launches] = await Promise.all([
-            fetch('https://api.spacexdata.com/v3/missions').then(data => data.json()),
+        let [rockets,launches] = await Promise.all([
+            fetch('https://api.spacexdata.com/v3/rockets').then(data => data.json()),
            fetch( 'https://api.spacexdata.com/v3/launches').then(data => data.json())
         ])
         return {
-            missions,
+            rockets,
             launches
         }
     }catch(error){

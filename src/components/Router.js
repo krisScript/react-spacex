@@ -5,8 +5,10 @@ import Loader from './Loader'
 // const  Home = lazy(() => import('./Home') )
 import Home from './Home';
 const LaunchDetails = lazy(() => import('./Launches/LaunchDetails'));
+const RocketDetails = lazy(() => import('./Rockets/RocketDetails'));
 const Launches = lazy(() => import('./Launches/Launches'));
 const Missions = lazy(() => import('./Missions'));
+const Rockets =lazy(() => import('./Rockets/Rockets'));
 const Router = () => (
   <BrowserRouter>
     <>
@@ -17,6 +19,15 @@ const Router = () => (
           render={() => (
             <Suspense fallback={<Loader/>}>
               <Missions />
+            </Suspense>
+          )}
+        />
+         <Route
+          path="/rockets"
+          
+          render={() => (
+            <Suspense fallback={<Loader/>}>
+              <Rockets />
             </Suspense>
           )}
         />
@@ -34,6 +45,14 @@ const Router = () => (
           render={(props) => (
             <Suspense fallback={<Loader/>}>
               <LaunchDetails {...props} />
+            </Suspense>
+          )}
+        />
+        <Route
+          path="/rocket/:rocketId"
+          render={(props) => (
+            <Suspense fallback={<Loader/>}>
+              <RocketDetails {...props} />
             </Suspense>
           )}
         />
