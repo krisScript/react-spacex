@@ -1,3 +1,5 @@
+const workboxBuild = require('workbox-build');
+
 const buildSW = () => {
     // This will return a Promise
     return workboxBuild.injectManifest({

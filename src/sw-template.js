@@ -8,7 +8,6 @@ if ('function' === typeof importScripts) {
  
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute([]);
-
     workbox.routing.registerRoute(
         new RegExp('https://api.spacexdata.com/v3/\a@(launches|missions)\b'),
         new workbox.strategies.CacheFirst({

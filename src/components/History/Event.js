@@ -32,7 +32,7 @@ const Event = props => {
           )}
           {event.links.article ? (
             <Button color="primary" href={event.links.article}>
-              article
+              Article
             </Button>
           ) : (
             ''
