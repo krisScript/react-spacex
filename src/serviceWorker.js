@@ -10,7 +10,6 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read http://bit.ly/CRA-PWA
 
-
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
@@ -33,7 +32,8 @@ export function register(config) {
     }
 
     window.addEventListener('load', () => {
-      const swUrl = `const swUrl = ${process.env.PUBLIC_URL}/sw.js;`;
+      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);

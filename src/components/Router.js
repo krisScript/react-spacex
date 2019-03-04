@@ -10,6 +10,7 @@ const Launches = lazy(() => import('./Launches/Launches'));
 const Missions = lazy(() => import('./Missions'));
 const HistoryList =lazy(() => import('./History/HistoryList'));
 const Rockets =lazy(() => import('./Rockets/Rockets'));
+const Page404 =lazy(() => import('./Page404'));
 const Router = () => (
   <BrowserRouter>
     <>
@@ -67,6 +68,12 @@ const Router = () => (
           )}
         />
         <Route path="/" exact component={Home} />
+        <Route  render={() => (
+            <Suspense fallback={<Loader/>}>
+              <Page404 />
+            </Suspense>
+          )} />
+ 
       </Switch>
     </>
   </BrowserRouter>
